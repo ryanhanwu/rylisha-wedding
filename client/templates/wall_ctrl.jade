@@ -1,0 +1,12 @@
+template(name="ctrl")
+  .ctrl
+    h1 Rylisha Live Control
+    +loginButtons
+    if currentUser
+      .actions
+        button.btn.btn-primary.btn-del Delete
+        button.btn.btn-primary.btn-high Highlight
+        button.btn.btn-primary.btn-wall Wall
+      hr
+      each photos
+        a.photo(style="background-image: url('{{photoUrl url}}')")

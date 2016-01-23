@@ -1,0 +1,638 @@
+$color-purple: #A84482
+$color-gray: #BAABBD
+$color-brown: #866875
+$color-lightbgray: lighten($color-gray, 20%)
+$color-darkgray: darken($color-gray, 20%)
+
+@font-face
+  font-family: 'buttermilkregular'
+  src: url('/fonts/buttermilk-webfont.eot')
+  src: url('/fonts/buttermilk-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/buttermilk-webfont.woff2') format('woff2'), url('/fonts/buttermilk-webfont.woff') format('woff'), url('/fonts/buttermilk-webfont.ttf') format('truetype'), url('/fonts/buttermilk-webfont.svg#buttermilkregular') format('svg')
+  font-weight: normal
+  font-style: normal
+// font-family: 'buttermilkregular'
+
+@font-face
+  font-family: 'californiasansregregular'
+  src: url('/fonts/californiasansreg-webfont.eot')
+  src: url('/fonts/californiasansreg-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/californiasansreg-webfont.woff2') format('woff2'), url('californiasansreg-webfont.woff') format('woff'), url('/fonts/californiasansreg-webfont.ttf') format('truetype'), url('/fonts/californiasansreg-webfont.svg#californiasansregregular') format('svg')
+  font-weight: normal
+  font-style: normal
+
+@import responsive
+
+body
+  overflow: auto
+  color: $color-darkgray
+  text-align: center
+  font-family: 'californiasansregregular'
+
+#splash
+  position: fixed
+  z-index: 100
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background-image: linear-gradient(white, #F0EBF3)
+  transition: opacity 2s cubic-bezier(0.39, 0.575, 0.565, 1)
+  &.done
+    opacity: 0
+  .spinner
+    position: fixed
+    top: 500px
+    left: 50%
+    margin-left: -30px
+#logo-splash
+  position: fixed
+  z-index: 101
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  text-align: center
+  .splash-logo
+    position: relative
+    z-index: 102
+    width: 35%
+    margin: 1em auto 0
+    transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1)
+    transition-delay: 0
+    img
+      max-width: 440px
+    &.done
+      width: 15%
+.img-fulfill
+  img
+    width: 100%
+    max-width: 100%
+#language
+  position: fixed
+  z-index: 20
+  right: 10px
+  top: 10px
+  font-size: 1.2em
+  a
+    cursor: pointer
+    color: $color-purple
+#scene
+  background-image: url('http://cdn.rylisha.com/images/bg.png')
+  background-repeat: no-repeat
+  background-position: top center
+  background-size: cover
+  overflow: hidden
+  position: fixed
+  width: 100%
+  top: 0
+  bottom: 0
+  height: 100vh
+  .layer
+    position: absolute
+    height: 100vh!important
+    width: 100%
+    padding: 0
+    margin: 0
+    background-repeat: repeat
+    background-size: cover
+    background-position: right top
+    &.l1
+      opacity: 0.6
+      background-image: url('http://cdn2.rylisha.com/images/smFlowerBg.png')
+    &.l2
+      opacity: 0.7
+      background-image: url('http://cdn2.rylisha.com/images/midFlowerBg.png')
+    &.l3
+      opacity: 0.8
+      background-image: url('http://cdn2.rylisha.com/images/bigFlowerBg.png')
+
+.tree-wrapper
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  height: 100vh
+.tree
+  position: fixed
+  width: 35%
+
+  &.tree-right
+    right: -2em
+  &.tree-left
+    left: -2em
+
+.logo
+  position: relative
+  z-index: 2
+  opacity: 0
+  width: 15%
+  margin: 1em auto 0
+  @include max-screen(960px)
+    margin-top: 2em
+  @include max-screen(600px)
+    margin-top: 1.3em
+  &.done
+    opacity: 1
+.navi
+  font-family: 'buttermilkregular'
+  .item
+    text-align: center
+  a
+    font-size: 1.8em
+    transition: opacity 0.3s linear
+    color: $color-purple
+    opacity: .56
+    transition: opacity 0.2s linear
+    &:hover, &:focus
+      opacity: .8
+      text-decoration: none
+    &.active
+      opacity: 1
+.extra
+  position: relative
+  .photos
+    width: 100%
+    max-width: 600px
+    margin: 0 auto
+  .photo
+    float: left
+    width: 110px
+    height: 110px
+    transition: all .5s ease-in-out
+    margin: 5px
+    &.photo5
+      width: 110px
+      height: 110px
+    &.photo4
+      width: 140px
+      height: 140px
+    &.photo3
+      width: 190px
+      height: 190px
+    &.photo2
+      width: 290px
+      height: 290px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+
+.story
+  font-size: 1.4em
+  .detail
+    margin-bottom: 1em
+  .photos
+    text-align : center
+  .photo
+    margin-left: 0.3em
+    &::first-child
+      margin-left: 0
+    transition: opacity 0.2s linear
+    position: relative
+    z-index: 3
+    display: inline-block
+    width: 150px
+    height: 150px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+    opacity: 0.5
+    &:hover
+      opacity: 1
+    &.photo1
+      background-image: url("/images/us/us2.gif")
+      background-position: center center
+    &.photo2
+      background-position: center -40px
+    &.photo3
+      background-position: center -40px
+    &.photo4
+      background-position: center -10px
+    &.photo5
+      background-image: url("/images/us/IMG_0420.jpg")
+      background-position: center -40px
+      opacity: 1
+    &.photo6
+      background-position: center -10px
+    &.photo7
+      background-position: center center
+    &.photo8
+      background-image: url("/images/us/elisha2.gif")
+      background-position: center center
+    &.photo9
+      background-position: center center
+  .photo1:hover
+    background-image: url("/images/us/IMG_5540.JPG")
+  .photo5:hover
+    background-image: url("/images/us/us3.gif")
+  .photo8:hover
+    background-image: url("/images/us/IMG_4503.JPG")
+.message-top
+  color: $color-darkgray
+  position: relative
+  z-index: 1
+  font-size: 2em
+
+.separator
+  position: relative
+  z-index: 1
+  width: 14%
+  margin: 0 auto 1em
+  &.flip
+    margin: 1em auto 0
+    transform: rotate(180deg)
+
+.rylisha
+  position: relative
+  z-index: 1
+  width: 25%
+  margin: 1em auto 1em
+
+.countdown
+  color: $color-brown
+
+  position: relative
+  z-index: 1
+  font-size: 2em
+  margin: 1em auto
+
+.location
+  // font-family: 'Lekton', sans-serif
+  color: $color-brown
+  position: relative
+  z-index: 1
+  font-size: 1.4em
+  a, a:visited, a:active
+    color: $color-brown
+    text-decoration: none
+    border-bottom: 1px gray dotted
+
+.messages
+  // font-family: 'Lekton', sans-serif
+
+.rsvpPwd, .rsvpPwd-btn
+  background-color: rgba(255, 255, 255, 0.41)
+
+.message
+  color: $color-darkgray
+  position: relative
+  z-index: 1
+  font-size: 1.4em
+  &.final
+    margin-top: 0.5em
+.rsvp
+  .rsvpLetter
+    margin-bottom: 2em
+    border-radius: 5px
+    padding: 3em
+    background: rgba(211,201,225,0.27)
+  .field
+    margin-bottom: 2em
+  input, textarea, select
+    background: transparent
+    border: 0 none
+    border-radius: 0
+    border-bottom: 1px dotted brown
+    box-shadow: none
+  .has-error
+    input, textarea, select
+      border: 1px solid rgba(255, 38, 0, 0.4)
+      border-radius: 5px
+.btn-submit
+  color: #ffffff
+  background-color: #866875
+  border-color: #866875
+  &:hover, &:focus, &:active, &.active
+    color: #ffffff
+    background-color: #A84482
+    border-color: #866875
+
+.open .dropdown-toggle.btn-submit
+  color: #ffffff
+  background-color: #A84482
+  border-color: #866875
+.thank-you
+  font-size: 1.3em
+// Overrite from http://blog.koalite.com/bbg/
+.btn-submit
+  &:active, &.active
+    background-image: none
+
+.open .dropdown-toggle.btn-submit
+  background-image: none
+
+.btn-submit
+  &.disabled, &[disabled]
+    background-color: #866875
+    border-color: #866875
+
+fieldset[disabled] .btn-submit
+  background-color: #866875
+  border-color: #866875
+
+.btn-submit
+  &.disabled:hover, &[disabled]:hover
+    background-color: #866875
+    border-color: #866875
+
+fieldset[disabled] .btn-submit:hover
+  background-color: #866875
+  border-color: #866875
+
+.btn-submit
+  &.disabled:focus, &[disabled]:focus
+    background-color: #866875
+    border-color: #866875
+
+fieldset[disabled] .btn-submit:focus
+  background-color: #866875
+  border-color: #866875
+
+.btn-submit
+  &.disabled:active, &[disabled]:active
+    background-color: #866875
+    border-color: #866875
+
+fieldset[disabled] .btn-submit:active
+  background-color: #866875
+  border-color: #866875
+
+.btn-submit
+  &.disabled.active, &[disabled].active
+    background-color: #866875
+    border-color: #866875
+
+fieldset[disabled] .btn-submit.active
+  background-color: #866875
+  border-color: #866875
+
+.btn-submit .badge
+  color: #866875
+  background-color: #ffffff
+
+// Overrite
+#iron-router-progress
+  background-color: #a84482
+  box-shadow: 0 0 5px #866875
+
+.registry
+  font-size: 1.4em
+  .description
+    margin-bottom: 1em
+    p
+      text-align: center
+  .logos
+    &::first-child
+      margin-bottom: 2em
+    .wrapper
+      a
+        display: table-cell
+        height: 165px
+        vertical-align: middle
+
+.sk-chasing-dots .sk-child
+  background-color: $color-purple
+
+@include max-screen(768px)
+  body
+    font-size: 10px
+  .separator
+    width: 45%
+  #language
+    font-size: 1.5em
+  #scene
+    .layer
+      background-position: right bottom
+  .logo
+    width: 30%
+  .rylisha
+    width: 57%
+  .countdown
+    font-size: 1.6em
+  .location, .message
+    font-size: 1.6em
+  .navi
+    padding-bottom: 2em
+    a
+      font-size: 2.2em
+  .story
+    font-size: 1.6em
+    .photo
+      opacity: 1
+      width: 100px
+      height: 100px
+      &.photo1
+        background-position: center top
+      &.photo2
+        background-position: center -30px
+      &.photo3
+        background-position: center -30px
+      &.photo4
+        background-position: center top
+      &.photo5
+        background-position: center -30px
+        opacity: 1
+      &.photo6
+        background-position: center top
+  .extra
+    .photos
+      .photo, .photo5
+        width: 100%
+        height: auto
+        min-height: 300px
+  .registry
+    .logos .wrapper a
+      height: 100px
+    .description
+      font-size: 1.6em
+  #splash
+    .spinner
+      position: fixed
+      top: 200px
+      left: 50%
+      margin-left: -30px
+  #logo-splash
+    .splash-logo
+      width: 45%
+      &.done
+        width: 30%
+
+/// Timeline
+.full-screen-image
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+  position: fixed
+  z-index: 5000
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+$gap: 80px
+.timeline
+  @import url(https://fonts.googleapis.com/css?family=Niconne)
+  &::before
+    content: ''
+    position: fixed
+    top: 0
+    left: 18px
+    height: 100vh
+    width: 4px
+    background: #999
+    left: 50%
+    margin-left: -2px
+  line-height: 0
+  .left-blocks
+    .moment
+      float: right
+      margin-right: $gap
+    .time
+      right: ($gap+15)*-1
+      &:after
+        right: -7px
+  .right-blocks
+    .moment
+      float: left
+      margin-left: $gap
+    .time
+      left: ($gap+15)*-1
+      &:after
+        left: -7px
+
+  .time
+    position: absolute
+    top: 50px
+    width: $gap+14
+    height: 1px
+    background: $color-darkgray
+    &:after
+      content: ''
+      border: 3px solid $color-lightbgray
+      width: 21px
+      height: 21px
+      background: gray
+      border-radius: 10px
+      position: absolute
+      line-height: 1px
+      top: -10px
+      z-index: 1
+  .moment
+    min-width: 60%
+    position: relative
+    display: inline-block
+    border-radius: 3px
+    margin-bottom: 2em
+    padding: 0 0 0
+    border: 1px solid $color-darkgray
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05)
+  .pic-wrapper
+    position: relative
+  .filler
+    position: absolute
+    background-position: center center
+    background-size: cover
+    left: 0
+    right: 0
+    z-index: -1
+    width: 100%
+    height: 100%
+    -webkit-filter: blur(2px)
+    -moz-filter: blur(2px)
+    -o-filter: blur(2px)
+    -ms-filter: blur(2px)
+    filter: blur(2px)
+    max-height: 200px
+  .pic
+    // width: 100%
+    max-width: 100%
+    max-height: 200px
+
+  .name
+    color: $color-darkgray
+    font-family: Niconne
+    font-size: 1.3em
+    margin: 25px 0
+
+.left-blocks
+  float: left
+  width: 49%
+  .moment:first-child
+    margin-top: 2%
+.right-blocks
+  float: right
+  width: 49%
+  .moment:first-child
+    margin-top: 10%
+
+//Game Page
+.game
+  position: relative
+
+//Upload Page
+.uploadPage
+  .erlogo
+    max-width: 200px
+    margin: 0 auto
+.fileupload
+  margin-top: 1.5em
+.upload-btn
+  background-color: $color-purple
+  border-color: lighten($color-purple, 30%)
+  &:active:hover, &:active, &:hover
+    background-color: darken($color-purple, 10%)
+    border-color: $color-purple
+.karma
+  padding: 1em
+  color: $color-darkgray
+  font-size: 1.5em
+  text-align: center
+//Ctrl
+.ctrl
+  .photo
+    display: inline-block
+    cursor: pointer
+    width: 92px
+    height: 92px
+    background-position: center center
+    background-size: cover
+    &.selected
+      border: 3px solid gold
+@include min-screen(1200px)
+  .timeline .left-blocks .time:after
+    right: -10px
+  .timeline .right-blocks .time:after
+    left: -10px
+  .timeline
+    .pic, .filler
+      max-height: 350px
+
+@include min-screen(1440px)
+  .timeline .left-blocks .time:after
+    right: -16px
+  .timeline .right-blocks .time:after
+    left: -16px
+
+@include max-screen(480px)
+  .timeline:before
+    width: 1px
+    margin-left: -1px
+  .timeline .left-blocks .moment,
+  .timeline .right-blocks .moment
+    width: 95%
+    margin: 0.5em
+  .timeline
+    .time
+      width: 0px
+      display: none
+    .name
+      margin: 15px 0
+
+  .navi
+    a
+      font-size: 1.8em
+  #scene
+    background-image: url('http://cdn.rylisha.com/images/bg480.png')
+
+@include max-screen(1024px)
+  #scene
+    background-image: url('http://cdn.rylisha.com/images/bg1024.png')
+

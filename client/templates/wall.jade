@@ -1,0 +1,23 @@
+template(name="wall")
+  if showFullScreen
+    .full-screen-image(style="background-image: url('{{highlight}}')")
+  .timeline
+    .left-blocks.pic-container
+      each photosOdd
+        .moment
+          .pic-wrapper
+            .filler(style="background-image: url('{{photoUrl url}}')")
+            a(href="{{photoUrl url}}" target="_pic")
+              img.pic(src="{{photoUrl url}}")
+          .name - {{name}}
+          .time
+    .right-blocks.pic-container
+      each photosEven
+        .moment
+          .pic-wrapper
+            .filler(style="background-image: url('{{photoUrl url}}')")
+            a(href="{{photoUrl url}}" target="_pic")
+              img.pic(src="{{photoUrlShort url}}")
+          .name - {{name}}
+          .time
+

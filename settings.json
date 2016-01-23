@@ -1,0 +1,11 @@
+{
+	"public": {
+		"houston_root_route": "/____"
+	},
+	"aws": {
+		"bucket": "rylisha",
+		"region": "ap-northeast-1",
+		"AWSAccessKeyId": "XXXXX",
+		"AWSSecretAccessKey": "XXXXX"
+	}
+}

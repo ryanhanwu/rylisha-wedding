@@ -1,0 +1,14 @@
+template(name="navi")
+  .row
+    .col-xs-2.col-md-offset-3.col-md-1.item
+      a(href="{{pathFor 'index'}}" class="{{isTemplate 'index'}}") {{_ "Wedding"}}
+    .col-xs-2.col-md-1.item
+      a(href="{{pathFor 'story'}}" class="{{isTemplate 'story'}}") {{_ "Story"}}
+    .col-xs-2.col-md-1.item
+      a(href="{{pathFor 'rsvp'}}" class="{{isTemplate 'rsvp'}}") {{{_ "RSVP"}}}
+    .col-xs-2.col-md-1.item
+      a(href="{{pathFor 'registry'}}" class="{{isTemplate 'registry'}}") {{{_ "Registry"}}}
+    .col-xs-2.col-md-1.item
+      a(href="{{pathFor 'extra'}}" class="{{isTemplate 'extra'}}") {{{_ "Extra"}}}
+    .col-xs-2.col-md-1.item
+      a(href="{{pathFor 'game'}}" class="{{isTemplate 'game'}}") {{{_ "Game"}}}

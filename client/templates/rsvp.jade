@@ -1,0 +1,81 @@
+template(name="rsvp")
+  .container-fluid.messages
+    .row
+      .col-xs-offset-1.col-xs-10.col-md-offset-4.col-md-4.message.text-center(class="{{hasError}}")
+        if rsvpEnabled
+          .tks {{_ "Look_forward" }}
+          br
+        else if rsvpDone
+          br
+        else
+          p {{_ "Please enter your passowrd to RSVP" }}
+            br.visible-xs.visible-sm
+            | or
+            a(href="mailto:hello@rylisha.com") request
+            | one
+          .input-group
+            input.form-control.rsvpPwd(placeholder="" type="password")
+            span.input-group-btn
+              button.rsvpPwd-btn.btn.btn-default(type="button") {{_ "Submit" }}
+        if errorMessage
+          label.control-label.error {{errorMessage}}
+
+  .container.rsvp
+    if rsvpEnabled
+      .row
+        .col-md-offset-3.col-md-6.rsvpLetter
+          form.form.rsvpForm
+            +momentum plugin='slide-height'
+              .row.field
+                .col-md-12(class="{{errorFieldClass 'name'}}")
+                  input.form-control.input-md(name='name', type='text', placeholder='{{_ "Your Name"}}' value="{{tempRSVP.name}}")
+              .row.field
+                .col-md-12(class="{{errorFieldClass 'email'}}")
+                  input.form-control.input-md(name='email', type='text', placeholder='{{_ "Your_email" }}' value="{{tempRSVP.email}}")
+              .row.field
+                .col-md-12(class="{{errorFieldClass 'rsvp'}}")
+                  select.form-control(name='rsvp')
+                    option(value="" disabled selected) {{_ "RSVP" }}
+                    option(value='true') {{{_ "Will celebrate in <b>person</b>" }}}
+                    option(value='false') {{{_ "Will celebrate in <b>spirit</b>" }}}
+              unless rsvpNO
+                .row.field
+                  .col-md-12(class="{{errorFieldClass 'rsvpWith'}}")
+                    select.form-control(name='rsvpWith')
+                      option(value='' disabled selected) {{_ "Guest(s) Number"}}
+                      option(value='1') 1 {{_ "Guest"}}
+                      option(value='2') 2 {{_ "Guests"}}
+                      option(value='3') 3 {{_ "Guests"}}
+                      option(value='4') 4 {{_ "Guests"}}
+                      option(value='5') 5 {{_ "Guests"}}
+                      option(value='6') 6 {{_ "Guests"}}
+                      option(value='7') 7 {{_ "Guests"}}
+                      option(value='8') 8 {{_ "Guests"}}
+                .row.field
+                  .col-md-12(class="{{errorFieldClass 'vegetarian'}}")
+                    select.form-control(name='vegetarian')
+                      option(value='' disabled selected) {{_ "Vegetarian number" }}
+                      option(value='0') {{_ "No vegetarian" }}
+                      option(value='1') 1 {{_ "Vegetarian" }}
+                      option(value='2') 2 {{_ "Vegetarian" }}
+                      option(value='3') 3 {{_ "Vegetarian" }}
+                      option(value='4') 4 {{_ "Vegetarian" }}
+                      option(value='5') 5 {{_ "Vegetarian" }}
+                      option(value='6') 6 {{_ "Vegetarian" }}
+                      option(value='7') 7 {{_ "Vegetarian" }}
+                      option(value='8') 8 {{_ "Vegetarian" }}
+
+                .row.field
+                  .col-md-12(class="{{errorFieldClass 'address'}}")
+                    input.form-control.input-md(name='address', type='text', placeholder='{{_ "Address for invitation" }}' value="{{tempRSVP.address}}")
+              .row.field
+                .col-md-12
+                  textarea.form-control(name='note' rows="4" placeholder='{{_ "Message to the couple" }}' value="{{tempRSVP.note}}")
+              .form-group
+                .col-md-offset-3.col-md-6
+                  button.btn-submit.btn.btn-primary(name='submit') {{_ "Submit" }}
+    else if rsvpDone
+      .row
+        .col-md-offset-3.col-md-6.thank-you
+          p {{_ "Thank you for your RSVP, we look forward to celebrating with you"}}
+

@@ -1,0 +1,6 @@
+{
+	"scripts": {
+		"dev": "meteor --settings settings.json",
+		"build": "meteor build dist"
+	}
+}
